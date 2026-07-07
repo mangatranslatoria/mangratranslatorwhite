@@ -1,12 +1,11 @@
-# Manga Translator Studio - V34 Localized Edition
+# Manga Translator Studio V37
 
-This build keeps the V33 layout and pricing design, but refreshes the website localization.
+V37 updates:
+- Replaced theme logos with the new high-resolution dark/light PNG icons.
+- Added brand gradient to the Lifetime hero badge text in every language.
+- Added subtle gradient styling to the hero check icons.
 
-Main changes:
-- updated multilingual interface strings in `i18n.js`;
-- pricing labels localized more naturally;
-- "Smart Context" renamed in user-facing text as Smart Comic Context / localized equivalent;
-- "OCR" changed where needed to clearer text-recognition terminology;
-- hero, pricing, footer, guide and CTA labels reviewed.
-
-Assets remain unchanged.
+Keep the following files:
+- assets/logo/app-icon-dark.png
+- assets/logo/app-icon-light.png
+- style.css

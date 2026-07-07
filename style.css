@@ -1679,3 +1679,112 @@ body.theme-dark .pricing-cards-v26 .best-badge{
   .pricing-cards-v26 .plan-year:hover{box-shadow:0 32px 92px rgba(139,92,246,.24)!important;}
   .pricing-cards-v26 .plan-life:hover{box-shadow:0 34px 100px rgba(250,204,21,.28)!important;}
 }
+
+/* ===============================
+   V37 final brand polish
+   - new brand gradient for Lifetime hero badge
+   - gradient check icons in hero value cards
+   - keeps layout and translations unchanged
+   =============================== */
+:root{
+  --mts-ai-gradient:linear-gradient(90deg,#7a3ef2 0%,#4b6cff 48%,#18b8ff 100%);
+  --mts-check-circle-light:linear-gradient(135deg,#eef8ff 0%,#dff2ff 54%,#eaf7ff 100%);
+  --mts-check-circle-dark:linear-gradient(135deg,rgba(22,88,135,.78) 0%,rgba(12,62,103,.72) 54%,rgba(14,165,233,.22) 100%);
+}
+
+.hero h1 span{
+  background:var(--mts-ai-gradient)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+}
+
+.hero-pills i,
+.hero-pills-v25 i,
+.hero-pills span i,
+.hero-pills-v25 span i,
+body.theme-dark .hero-pills i,
+body.theme-dark .hero-pills-v25 i,
+body.theme-dark .hero-pills span i,
+body.theme-dark .hero-pills-v25 span i{
+  width:52px!important;
+  min-width:52px!important;
+  height:52px!important;
+  border-radius:999px!important;
+  display:grid!important;
+  place-items:center!important;
+  position:relative!important;
+  font-size:0!important;
+  line-height:1!important;
+  font-style:normal!important;
+  background:var(--mts-check-circle-light)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.88),0 8px 26px rgba(14,165,233,.14)!important;
+}
+
+body.theme-dark .hero-pills i,
+body.theme-dark .hero-pills-v25 i,
+body.theme-dark .hero-pills span i,
+body.theme-dark .hero-pills-v25 span i{
+  background:var(--mts-check-circle-dark)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 30px rgba(14,165,233,.16)!important;
+}
+
+.hero-pills i::before,
+.hero-pills-v25 i::before,
+.hero-pills span i::before,
+.hero-pills-v25 span i::before{
+  content:"✓";
+  font-size:34px;
+  font-weight:1000;
+  line-height:1;
+  background:var(--mts-ai-gradient)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.18));
+}
+
+.hero-pills .lifetime-pill b,
+.hero-pills-v25 .lifetime-pill b,
+body.theme-dark .hero-pills .lifetime-pill b,
+body.theme-dark .hero-pills-v25 .lifetime-pill b{
+  display:inline-block!important;
+  background:var(--mts-ai-gradient)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+  text-shadow:none!important;
+}
+
+.hero-pills .lifetime-pill,
+.hero-pills-v25 .lifetime-pill{
+  background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(24,184,255,.09))!important;
+  border-color:rgba(24,184,255,.30)!important;
+  box-shadow:0 24px 68px rgba(24,184,255,.10)!important;
+}
+
+body.theme-dark .hero-pills .lifetime-pill,
+body.theme-dark .hero-pills-v25 .lifetime-pill{
+  background:linear-gradient(135deg,rgba(10,23,43,.92),rgba(15,54,94,.58),rgba(9,23,43,.92))!important;
+  border-color:rgba(24,184,255,.32)!important;
+  box-shadow:0 22px 70px rgba(14,165,233,.16)!important;
+}
+
+@media(max-width:520px){
+  .hero-pills i,
+  .hero-pills-v25 i,
+  .hero-pills span i,
+  .hero-pills-v25 span i,
+  body.theme-dark .hero-pills i,
+  body.theme-dark .hero-pills-v25 i,
+  body.theme-dark .hero-pills span i,
+  body.theme-dark .hero-pills-v25 span i{
+    width:44px!important;
+    min-width:44px!important;
+    height:44px!important;
+  }
+  .hero-pills i::before,
+  .hero-pills-v25 i::before,
+  .hero-pills span i::before,
+  .hero-pills-v25 span i::before{font-size:29px!important;}
+}
