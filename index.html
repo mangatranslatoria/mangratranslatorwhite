@@ -1,81 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manga Translator Studio | Offline AI Manga Translation</title>
-  <meta name="description" content="Translate manga, manhwa and manhua offline with local AI. No cloud, total privacy, optional GPU." />
-  <link rel="icon" type="image/png" href="assets/logo/logo.png" />
-  <link rel="apple-touch-icon" href="assets/logo/logo.png" />
+  <title>Manga Translator Studio | Local AI Manga Translation</title>
+  <meta name="description" content="Translate manga, manhwa and manhua locally on your PC with AI. 200+ translation languages with compatible models, 20 interface languages, CPU support and lifetime license available." />
+  <link rel="icon" href="assets/logo/app-icon-dark.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/logo/app-icon-dark.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header class="site-header">
   <div class="nav-shell">
-    <a class="brand" href="#top" aria-label="Manga Translator Studio"><img class="brand-logo" src="assets/logo/logo.png" alt="Manga Translator Studio logo" /><span class="brand-text">Manga Translator Studio</span></a>
+    <a class="brand" href="index.html" aria-label="Manga Translator Studio Home">
+      <img src="assets/logo/app-icon-dark.png" alt="Manga Translator Studio logo" class="brand-logo" />
+      <span class="brand-text">Manga Translator Studio</span>
+    </a>
     <nav class="main-nav" aria-label="Main navigation">
       <a href="#features" data-i18n="nav.features">Features</a>
-      <a href="#how" data-i18n="nav.how">How it works</a>
-      <a href="#models" data-i18n="nav.models">AI Models</a>
-      <a href="#hardware" data-i18n="nav.hardware">Hardware</a>
-      <a href="#gallery" data-i18n="nav.gallery">Screenshot</a>
+      <a href="guide.html" data-i18n="nav.guide">Guide</a>
+      <a href="#gallery" data-i18n="nav.examples">Examples</a>
       <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
     </nav>
-    <div class="nav-actions"><select id="languageSelect" class="language-select" aria-label="Language selector"></select><a class="top-download" href="#download" data-i18n="nav.download">Download Free Trial</a></div>
+    <div class="nav-actions">
+      <a class="version-badge" href="changelog.html">v1.0</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme"><span class="theme-icon">☀️</span><span class="theme-text">Light</span></button>
+      <select id="languageSelect" class="language-select" aria-label="Language selector"></select>
+      <a class="top-download" href="#download" data-i18n="nav.download">Download Free Trial</a>
+    </div>
   </div>
 </header>
 <main id="top">
   <section class="hero section-wide">
     <div class="hero-copy">
-      <p class="eyebrow" data-i18n="hero.eyebrow">OFFLINE AI MANGA TRANSLATION</p>
-      <h1 data-i18n="hero.title">Translate Manga, Manhwa & Manhua <span>Offline with AI</span></h1>
-      <p class="hero-subtitle" data-i18n="hero.subtitle">AI translation directly on your PC. No cloud. No mandatory subscription. Total privacy. Your files, your translations.</p>
-      <div class="hero-pills">
-        <span><i>✓</i><b data-i18n="pill.offline">100% Offline</b></span>
-        <span><i>✓</i><b data-i18n="pill.local">Local AI</b></span>
-        <span><i>✓</i><b data-i18n="pill.ocr">Advanced OCR</b></span>
-        <span><i>✓</i><b data-i18n="pill.cpu">Works on CPU too</b></span>
+      <h1 data-i18n="hero.v25.title">Translate Manga, Manhwa &amp; Manhua <span>with Local AI</span></h1>
+      <p class="hero-subtitle" data-i18n="hero.v25.subtitle">Translate directly on your PC using local AI. No cloud. Full privacy. Fast. Accurate.</p>
+      <div class="hero-pills hero-pills-v25">
+        <span><i>✓</i><b data-i18n="hero.badge.offline">100% Offline</b></span>
+        <span class="highlight-pill"><i>✓</i><b data-i18n="hero.badge.languages">200+ Translation Languages</b></span>
+        <span><i>✓</i><b data-i18n="hero.badge.interface">Interface available in 20 Languages</b></span>
+        <span><i>✓</i><b data-i18n="hero.badge.cpu">Works on CPU</b></span>
+        <span class="highlight-pill lifetime-pill"><i>✓</i><b data-i18n="hero.badge.lifetime">Lifetime License Available</b></span>
       </div>
-      <div class="hero-actions"><a class="btn primary" href="#download"><svg viewBox="0 0 24 24"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg><span data-i18n="hero.cta1">Download Free Trial</span></a><a class="btn secondary" href="#gallery"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></svg><span data-i18n="hero.cta2">Watch Video Guide</span></a></div>
-      <p class="trial-note" data-i18n="hero.note">20 free pages • No credit card required</p>
+      <p class="hero-language-note" data-i18n="hero.language.note">Language coverage depends on the AI model loaded in LM Studio. Compatible models can cover 200+ languages.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#download"><svg viewBox="0 0 24 24"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg><span data-i18n="hero.cta1">Download Free Trial</span></a>
+        <button class="btn secondary" id="heroVideoTrigger" type="button"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></svg><span data-i18n="hero.cta2">Watch Demo</span></button>
+      </div>
+      <p class="trial-note" data-i18n="hero.note.v25">15 free pages • No credit card required • Windows 10 / 11</p>
     </div>
     <div class="app-frame">
-      <img id="appPreviewImage" src="assets/app/app-preview.png" alt="Manga Translator Studio preview" />
-      <div id="heroShots" class="hero-shots" aria-label="Extra screenshots"></div>
+      <button class="app-preview-button" id="appVideoTrigger" type="button" aria-label="Watch Manga Translator Studio video demo">
+        <div class="preview-mode-badge" id="previewModeBadge">App Preview</div>
+        <img src="assets/app/app-preview-light.webp" alt="Manga Translator Studio preview" id="appPreviewImage" />
+        <span class="play-overlay"><span>▶</span><b data-i18n="hero.watch.demo">Watch demo</b></span>
+      </button>
     </div>
   </section>
-
+  <section id="features" class="section-wide feature-cards">
+    <article><div class="feature-icon feature-c1"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 5 3 8 7 10 4-2 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></div><h3 data-i18n="features.privacy.title">Total Privacy</h3><p data-i18n="features.privacy.text">Your files always remain on your PC.</p></article>
+    <article><div class="feature-icon feature-c2"><svg viewBox="0 0 24 24"><path d="M9 3a3 3 0 0 0-3 3v1a4 4 0 0 0 0 8v1a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Zm6 0a3 3 0 0 1 3 3v1a4 4 0 0 1 0 8v1a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Z"/></svg></div><h3 data-i18n="features.ai.title">Local AI</h3><p data-i18n="features.ai.text">Use powerful AI models directly on your hardware.</p></article>
+    <article><div class="feature-icon feature-c3"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><h3 data-i18n="features.lang.title">Multilingual</h3><p data-i18n="features.lang.text">Over 20 languages supported for manga from around the world.</p></article>
+    <article><div class="feature-icon feature-c4"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg></div><h3 data-i18n="features.batch.title">Batch Processing</h3><p data-i18n="features.batch.text">Translate entire chapter folders with one click.</p></article>
+    <article><div class="feature-icon feature-c5"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m5 5 14 14"/></svg></div><h3 data-i18n="features.noSub.title">No Subscription</h3><p data-i18n="features.noSub.text">Pay once. Use it forever.</p></article>
+    <article><div class="feature-icon feature-c6"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M4 10h3M4 14h3M17 10h3M17 14h3M10 4v3M14 4v3M10 17v3M14 17v3"/></svg></div><h3 data-i18n="features.cpu.title">Works on CPU too</h3><p data-i18n="features.cpu.text">No GPU? No problem. It can also run on CPU only.</p></article>
+  </section>
   <section id="gallery" class="section-wide gallery-showcase">
     <button class="gallery-arrow left" id="galleryPrev" aria-label="Previous">‹</button>
     <button class="gallery-arrow right" id="galleryNext" aria-label="Next">›</button>
-    <div class="gallery-title"><div class="title-icon">▧</div><div><h2 data-i18n="gallery.title">Translation Previews</h2><p data-i18n="gallery.subtitle">Click a preview to view the high-resolution image</p><strong id="galleryPairLabel">English → Italiano</strong></div></div>
+    <div class="gallery-title"><div class="title-icon">▧</div><div><h2 data-i18n="gallery.v25.title">Before &amp; After Translation Examples</h2><p data-i18n="gallery.v25.subtitle">Click a preview to view the high-resolution result.</p><strong id="galleryPairLabel">Japanese → English</strong></div></div>
     <div id="translationGallery" class="translation-gallery" aria-live="polite"></div>
     <div id="galleryDots" class="gallery-dots"></div>
   </section>
+  <section id="pricing" class="section-wide pricing-section">
+    <div class="pricing-head">
+      <p class="eyebrow" data-i18n="pricing.eyebrow">SIMPLE PRICING</p>
+      <h2 data-i18n="pricing.v28.title">Choose your license</h2>
+      <p data-i18n="pricing.v28.subtitle">Every plan uses the same translation engine. Paid licenses unlock unlimited pages and advanced multi-language workflows.</p>
+      <button class="features-toggle" id="pricingFeatureToggle" type="button" aria-expanded="false">
+        <span class="toggle-arrow">⌄</span>
+        <span data-i18n="pricing.show.features">Show all features</span>
+      </button>
+    </div>
+    <div class="pricing-cards pricing-cards-five pricing-cards-v26 pricing-cards-v28 pricing-cards-v29">
+      <article class="price-card free-plan plan-free">
+        <h3 data-i18n="pricing.free.title">Free Trial</h3>
+        <p data-i18n="pricing.free.text">Try the full app with your own manga.</p>
+        <div class="price-value">€0</div>
+        <div class="plan-focus" data-i18n="pricing.free.focus">15 Free Pages</div>
+        <ul class="plan-core">
+          <li data-i18n="pricing.feature.ai">✓ AI Translation</li>
+          <li data-i18n="pricing.feature.textrec">✓ Text Recognition</li>
+          <li data-i18n="pricing.feature.comiccontext">✓ Smart Comic Context</li>
+          <li data-i18n="pricing.feature.profiles">✓ Manga Profiles</li>
+          <li data-i18n="pricing.feature.batch">✓ Batch Translation</li>
+        </ul>
+        <ul class="plan-more">
+          <li data-i18n="pricing.feature.languages">✓ 200+ Languages*</li>
+          <li data-i18n="pricing.feature.single">✓ Single-language Translation</li>
+          <li data-i18n="pricing.feature.personal">✓ Personal Use</li>
+          <li data-i18n="pricing.feature.standardupdates">✓ Standard Updates</li>
+        </ul>        <button class="plan-feature-toggle" type="button" aria-expanded="false">
+          <span class="toggle-arrow">⌄</span>
+          <span data-i18n="pricing.show.features">Show all features</span>
+        </button>
 
-  <section id="features" class="section-wide feature-cards">
-    <article><div class="feature-icon purple"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 5 3 8 7 10 4-2 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></div><h3 data-i18n="features.privacy.title">Total Privacy</h3><p data-i18n="features.privacy.text">Your files always remain on your PC.</p></article>
-    <article><div class="feature-icon blue"><svg viewBox="0 0 24 24"><path d="M9 3a3 3 0 0 0-3 3v1a4 4 0 0 0 0 8v1a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Zm6 0a3 3 0 0 1 3 3v1a4 4 0 0 1 0 8v1a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Z"/></svg></div><h3 data-i18n="features.ai.title">Local AI</h3><p data-i18n="features.ai.text">Use powerful AI models directly on your hardware.</p></article>
-    <article><div class="feature-icon blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><h3 data-i18n="features.lang.title">Multilingual</h3><p data-i18n="features.lang.text">Over 20 languages supported for manga from around the world.</p></article>
-    <article><div class="feature-icon purple"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg></div><h3 data-i18n="features.batch.title">Batch Processing</h3><p data-i18n="features.batch.text">Translate entire chapter folders with one click.</p></article>
-    <article><div class="feature-icon pink"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m5 5 14 14"/></svg></div><h3 data-i18n="features.noSub.title">No Subscription</h3><p data-i18n="features.noSub.text">Pay once. Use it forever.</p></article>
-    <article><div class="feature-icon purple"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M4 10h3M4 14h3M17 10h3M17 14h3M10 4v3M14 4v3M10 17v3M14 17v3"/></svg></div><h3 data-i18n="features.cpu.title">Works on CPU too</h3><p data-i18n="features.cpu.text">No GPU? No problem. It can also run on CPU only.</p></article>
+        <a class="btn secondary price-btn" href="#download" data-i18n="pricing.free.button">Download Free Trial</a>
+      </article>
+      <article class="price-card paid-plan plan-month">
+        <div class="plan-badge subtle" data-i18n="pricing.month.badge">Flexible</div>
+        <h3 data-i18n="pricing.plan.month">1 Month</h3>
+        <p data-i18n="pricing.month.text">Good for one chapter or a quick project.</p>
+        <div class="price-value">€6.99<span data-i18n="pricing.suffix.month">/mo</span></div>
+        <div class="plan-focus unlimited" data-i18n="pricing.focus.unlimited">Unlimited Pages</div>
+        <ul class="plan-core">
+          <li data-i18n="pricing.feature.ai">✓ AI Translation</li>
+          <li data-i18n="pricing.feature.textrec">✓ Text Recognition</li>
+          <li data-i18n="pricing.feature.comiccontext">✓ Smart Comic Context</li>
+          <li data-i18n="pricing.feature.profiles">✓ Manga Profiles</li>
+          <li data-i18n="pricing.feature.batch">✓ Batch Translation</li>
+        </ul>
+        <ul class="plan-more">
+          <li data-i18n="pricing.feature.languages">✓ 200+ Languages*</li>
+          <li data-i18n="pricing.feature.single">✓ Single-language Translation</li>
+          <li data-i18n="pricing.feature.personal">✓ Personal Use</li>
+          <li data-i18n="pricing.updates.included">✓ Updates included</li>
+          <li data-i18n="pricing.feature.multi3">✓ Multi-language Translation up to 3 languages</li>
+        </ul>        <button class="plan-feature-toggle" type="button" aria-expanded="false">
+          <span class="toggle-arrow">⌄</span>
+          <span data-i18n="pricing.show.features">Show all features</span>
+        </button>
+
+        <a class="btn secondary price-btn" href="#download" data-i18n="pricing.month.button">Choose Monthly</a>
+      </article>
+      <article class="price-card paid-plan plan-six">
+        <div class="plan-badge subtle" data-i18n="pricing.six.badge">Save more</div>
+        <h3 data-i18n="pricing.plan.six">6 Months</h3>
+        <p data-i18n="pricing.six.text">For users translating multiple series.</p>
+        <div class="price-value">€35.99</div>
+        <div class="plan-focus unlimited" data-i18n="pricing.focus.unlimited">Unlimited Pages</div>
+        <ul class="plan-core">
+          <li data-i18n="pricing.feature.ai">✓ AI Translation</li>
+          <li data-i18n="pricing.feature.textrec">✓ Text Recognition</li>
+          <li data-i18n="pricing.feature.comiccontext">✓ Smart Comic Context</li>
+          <li data-i18n="pricing.feature.profiles">✓ Manga Profiles</li>
+          <li data-i18n="pricing.feature.batch">✓ Batch Translation</li>
+        </ul>
+        <ul class="plan-more">
+          <li data-i18n="pricing.feature.languages">✓ 200+ Languages*</li>
+          <li data-i18n="pricing.feature.single">✓ Single-language Translation</li>
+          <li data-i18n="pricing.feature.personal">✓ Personal Use</li>
+          <li data-i18n="pricing.updates.included">✓ Updates included</li>
+          <li data-i18n="pricing.multilang.10">✓ Multi-language Translation up to 10 languages</li>
+          <li data-i18n="pricing.save.more.feature">✓ Save more than monthly</li>
+        </ul>        <button class="plan-feature-toggle" type="button" aria-expanded="false">
+          <span class="toggle-arrow">⌄</span>
+          <span data-i18n="pricing.show.features">Show all features</span>
+        </button>
+
+        <a class="btn secondary price-btn" href="#download" data-i18n="pricing.six.button">Choose 6 Months</a>
+      </article>
+      <article class="price-card popular-card paid-plan plan-year">
+        <div class="best-badge" data-i18n="pricing.year.badge">Best Seller</div>
+        <h3 data-i18n="pricing.plan.year">1 Year</h3>
+        <p data-i18n="pricing.year.text">Best annual option for regular use.</p>
+        <div class="price-value">€79.99<span data-i18n="pricing.suffix.year">/year</span></div>
+        <div class="plan-focus unlimited" data-i18n="pricing.focus.unlimited">Unlimited Pages</div>
+        <ul class="plan-core">
+          <li data-i18n="pricing.feature.ai">✓ AI Translation</li>
+          <li data-i18n="pricing.feature.textrec">✓ Text Recognition</li>
+          <li data-i18n="pricing.feature.comiccontext">✓ Smart Comic Context</li>
+          <li data-i18n="pricing.feature.profiles">✓ Manga Profiles</li>
+          <li data-i18n="pricing.feature.batch">✓ Batch Translation</li>
+        </ul>
+        <ul class="plan-more">
+          <li data-i18n="pricing.feature.languages">✓ 200+ Languages*</li>
+          <li data-i18n="pricing.feature.single">✓ Single-language Translation</li>
+          <li data-i18n="pricing.feature.personal">✓ Personal Use</li>
+          <li data-i18n="pricing.updates.included">✓ Updates included</li>
+          <li data-i18n="pricing.multilang.25">✓ Multi-language Translation up to 25 languages</li>
+          <li data-i18n="pricing.beta.access">✓ Beta Access</li>
+          <li data-i18n="pricing.early.features">✓ Early Features</li>
+        </ul>        <button class="plan-feature-toggle" type="button" aria-expanded="false">
+          <span class="toggle-arrow">⌄</span>
+          <span data-i18n="pricing.show.features">Show all features</span>
+        </button>
+
+        <a class="btn primary price-btn" href="#download" data-i18n="pricing.year.button">Choose 1 Year</a>
+      </article>
+      <article class="price-card lifetime-card paid-plan plan-life">
+        <div class="best-badge" data-i18n="pricing.badge">Best Value</div>
+        <h3 data-i18n="pricing.life.title">Lifetime License</h3>
+        <p data-i18n="pricing.life.text">Pay once. Use it forever. No subscription.</p>
+        <div class="price-value">€99.99</div>
+        <div class="plan-focus lifetime-focus" data-i18n="pricing.life.focus">Everything Included</div>
+        <ul class="plan-core">
+          <li data-i18n="pricing.feature.ai">✓ AI Translation</li>
+          <li data-i18n="pricing.feature.textrec">✓ Text Recognition</li>
+          <li data-i18n="pricing.feature.comiccontext">✓ Smart Comic Context</li>
+          <li data-i18n="pricing.feature.profiles">✓ Manga Profiles</li>
+          <li data-i18n="pricing.feature.batch">✓ Batch Translation</li>
+        </ul>
+        <ul class="plan-more">
+          <li data-i18n="pricing.feature.languages">✓ 200+ Languages*</li>
+          <li data-i18n="pricing.feature.single">✓ Single-language Translation</li>
+          <li data-i18n="pricing.feature.personal">✓ Personal Use</li>
+          <li data-i18n="pricing.life.li7">✓ Lifetime updates</li>
+          <li data-i18n="pricing.life.multilang">✓ Unlimited Multi-language Translation</li>
+          <li data-i18n="pricing.future.features">✓ Future Premium Features</li>
+          <li data-i18n="pricing.life.license">✓ Lifetime License</li>
+        </ul>        <button class="plan-feature-toggle" type="button" aria-expanded="false">
+          <span class="toggle-arrow">⌄</span>
+          <span data-i18n="pricing.show.features">Show all features</span>
+        </button>
+
+        <a class="btn primary price-btn" href="#download" data-i18n="pricing.life.button">Buy Lifetime</a>
+      </article>
+    </div>
+    <p class="pricing-note" data-i18n="pricing.v28.note">*Language coverage depends on the compatible AI model loaded in LM Studio.</p>
   </section>
-
+  <section class="section-wide smart-guide-promo">
+    <div class="smart-guide-copy">
+      <p class="eyebrow" data-i18n="guide.eyebrow">GUIDE</p>
+      <h2 data-i18n="guide.promo.title">Learn how to get better translations</h2>
+      <p data-i18n="guide.promo.text">One practical guide for setup, LM Studio, OCR, Smart Context, manga profiles and troubleshooting.</p>
+    </div>
+    <a class="btn secondary" href="guide.html" data-i18n="guide.open">Open Guide</a>
+  </section>
   <section class="section-wide accordion-grid">
-    <details id="models" class="info-panel"><summary><span class="summary-left"><i class="mini-icon">▥</i><span><b data-i18n="models.title">AI Models Benchmark</b><small data-i18n="models.subtitle">Quality, speed and requirements for supported AI models</small></span></span><em>⌄</em></summary><div class="panel-body"><div class="table-wrap"><table><thead><tr><th data-i18n="models.model">AI Model</th><th data-i18n="models.quality">Quality</th><th data-i18n="models.speed">Speed</th><th>VRAM</th><th data-i18n="models.recommended">Recommended</th></tr></thead><tbody><tr><td>TranslateGemma 27B</td><td>9.2</td><td>7.8</td><td>16GB+</td><td>Best Overall</td></tr><tr><td>Qwen 3.6 35B</td><td>10</td><td>4.0</td><td>24GB+</td><td>Highest Quality</td></tr><tr><td>Qwen 3 14B</td><td>8.8</td><td>8.5</td><td>12GB+</td><td>Best Balance</td></tr><tr><td>Gemma 12B</td><td>8.5</td><td>9.0</td><td>10GB+</td><td>Fast</td></tr><tr><td>Qwen 7B</td><td>7.5</td><td>10</td><td>8GB+</td><td>Low-End PCs</td></tr></tbody></table></div><p class="small-note" data-i18n="models.note">Indicative benchmarks on RTX 4090. Results may vary by model and configuration.</p></div></details>
-    <details id="hardware" class="info-panel"><summary><span class="summary-left"><i class="mini-icon">GPU</i><span><b data-i18n="hardware.title">Hardware Requirements</b><small data-i18n="hardware.subtitle">System requirements and performance on different hardware</small></span></span><em>⌄</em></summary><div class="panel-body"><div class="hardware-list"><div><b>CPU Only</b><span data-i18n="hardware.cpu">Supported · Slow</span></div><div><b>RTX 2060</b><span data-i18n="hardware.good">Good</span></div><div><b>RTX 3060</b><span data-i18n="hardware.veryGood">Very good</span></div><div><b>RTX 4070</b><span data-i18n="hardware.excellent">Excellent</span></div><div><b>RTX 4090</b><span data-i18n="hardware.max">Maximum</span></div></div><p class="small-note" data-i18n="hardware.note">Works on CPU too. GPU consigliata per la migliore esperienza.</p></div></details>
-    <details id="how" class="info-panel"><summary><span class="summary-left"><i class="mini-icon">◎</i><span><b data-i18n="how.title">Come Funziona</b><small data-i18n="how.subtitle">Step-by-step guide for translating your manga</small></span></span><em>⌄</em></summary><div class="panel-body steps"><p><b>1.</b> <span data-i18n="how.s1">Select the manga folder.</span></p><p><b>2.</b> <span data-i18n="how.s2">Choose language and profile.</span></p><p><b>3.</b> <span data-i18n="how.s3">Start translation.</span></p><p><b>4.</b> <span data-i18n="how.s4">Read the translated pages.</span></p></div></details>
-    <details id="faq" class="info-panel"><summary><span class="summary-left"><i class="mini-icon">◇</i><span><b>FAQ</b><small data-i18n="faq.subtitle">Frequently asked questions</small></span></span><em>⌄</em></summary><div class="panel-body faq-list"><p><b data-i18n="faq.q1">Does it need internet?</b><br><span data-i18n="faq.a1">No, translation runs locally on your PC.</span></p><p><b data-i18n="faq.q2">Do I need a powerful GPU?</b><br><span data-i18n="faq.a2">No, CPU is supported. RTX GPUs are recommended for high speed.</span></p><p><b data-i18n="faq.q3">Can I change gallery images?</b><br><span data-i18n="faq.a3">Yes. Put 01.jpg, 02.jpg, 03.jpg inside each language folder.</span></p></div></details>
+    <details class="info-panel" id="models"><summary><span class="summary-left"><i class="mini-icon">AI</i><span><b data-i18n="models.title">AI Models Benchmark</b><small data-i18n="models.subtitle">Quality, speed and requirements for supported AI models</small></span></span><em>⌄</em></summary><div class="panel-body"><p data-i18n="models.v25.text">Manga Translator Studio works with LM Studio and OpenAI-compatible local models such as TranslateGemma, Qwen, Gemma, Llama, Mistral and more.</p></div></details>
+    <details class="info-panel" id="hardware"><summary><span class="summary-left"><i class="mini-icon">GPU</i><span><b data-i18n="hardware.title">Hardware Requirements</b><small data-i18n="hardware.subtitle">System requirements and performance on different hardware</small></span></span><em>⌄</em></summary><div class="panel-body"><div class="hardware-list"><div><b>CPU Only</b><span data-i18n="hardware.cpu">Supported · Slow</span></div><div><b>RTX 3060</b><span data-i18n="hardware.veryGood">Very good</span></div><div><b>RTX 4090</b><span data-i18n="hardware.max">Maximum</span></div></div></div></details>
+    <details class="info-panel" id="how"><summary><span class="summary-left"><i class="mini-icon">◎</i><span><b data-i18n="how.title">How It Works</b><small data-i18n="how.subtitle">Step-by-step guide for translating your manga</small></span></span><em>⌄</em></summary><div class="panel-body steps"><p><b>1.</b> <span data-i18n="how.s1">Select the manga folder.</span></p><p><b>2.</b> <span data-i18n="how.s2">Choose language and profile.</span></p><p><b>3.</b> <span data-i18n="how.s3">Start translation.</span></p><p><b>4.</b> <span data-i18n="how.s4">Read the translated pages.</span></p></div></details>
+    <details class="info-panel" id="faq"><summary><span class="summary-left"><i class="mini-icon">?</i><span><b>FAQ</b><small data-i18n="faq.subtitle">Frequently asked questions</small></span></span><em>⌄</em></summary><div class="panel-body faq-list"><p><b data-i18n="faq.q1">Does it need internet?</b><br/><span data-i18n="faq.a1">No, translation runs locally on your PC.</span></p><p><b data-i18n="faq.q2">Do I need a powerful GPU?</b><br/><span data-i18n="faq.a2">No, CPU is supported. RTX GPUs are recommended for high speed.</span></p><p><b data-i18n="faq.q4">What does FAQ mean?</b><br/><span data-i18n="faq.a4">Frequently Asked Questions: common questions and answers.</span></p></div></details>
   </section>
-
-  <section class="section-wide stats-strip"><div><b>100% Offline</b><span data-i18n="strip.offline">No data is ever uploaded online.</span></div><div><b>20+ Lingue</b><span data-i18n="strip.lang">Complete multilingual support.</span></div><div><b>Local AI</b><span data-i18n="strip.ai">AI power on your hardware.</span></div><div><b data-i18n="strip.privacyTitle">Guaranteed Privacy</b><span data-i18n="strip.privacy">Your files stay yours.</span></div><div><b data-i18n="strip.updatesTitle">Free Updates</b><span data-i18n="strip.updates">Continuous improvements included.</span></div></section>
-
-  <section id="pricing" class="section-wide cta-panel"><h2 data-i18n="cta.title">Ready to start?</h2><p data-i18n="cta.text">Download Manga Translator Studio and translate your favorite manga offline with AI.</p><div class="hero-actions center"><a class="btn primary" id="download" href="#"><svg viewBox="0 0 24 24"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg><span data-i18n="cta.download">Download Free Trial</span></a><a class="btn secondary" href="#gallery"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></svg><span data-i18n="cta.video">Watch Video Guide</span></a></div><small data-i18n="cta.note">20 free pages • No credit card required</small></section>
+  <section class="section-wide stats-strip"><div><b data-i18n="stats.offline.title">100% Offline</b><span data-i18n="stats.offline.text">Your files never leave your computer.</span></div><div><b data-i18n="stats.languages.title">200+ Languages</b><span data-i18n="stats.languages.text">Translate into 200+ languages with compatible AI models.</span></div><div><b data-i18n="stats.ui.title">20 UI Languages</b><span data-i18n="stats.ui.text">Use the app interface in 20 languages.</span></div><div><b data-i18n="stats.lifetime.title">Lifetime License</b><span data-i18n="stats.lifetime.text">Pay once and own it forever.</span></div><div><b data-i18n="stats.cpu.title">CPU Support</b><span data-i18n="stats.cpu.text">Works without a GPU, too.</span></div></section>
+  <section class="section-wide cta-panel"><h2 data-i18n="cta.title">Ready to start?</h2><p data-i18n="cta.text">Download Manga Translator Studio and translate your favorite manga offline with AI.</p><div class="hero-actions center"><a class="btn primary" href="#" id="download"><svg viewBox="0 0 24 24"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg><span data-i18n="cta.download">Download Free Trial</span></a><a class="btn secondary" href="guide.html" data-i18n="guide.open">Open Guide</a></div><small data-i18n="hero.note.v25">15 free pages • No credit card required • Windows 10 / 11</small></section>
 </main>
-<footer class="site-footer"><div><a class="brand footer-brand" href="#top"><span class="brand-mark">M</span><span class="brand-text">Manga Translator Studio</span></a><p data-i18n="footer.text">Offline AI manga translation. No cloud. No mandatory subscription. Total privacy.</p></div><div><h4 data-i18n="footer.product">Product</h4><a href="#features" data-i18n="nav.features">Features</a><a href="#how" data-i18n="nav.how">How it works</a><a href="#models" data-i18n="nav.models">AI Models</a><a href="#pricing" data-i18n="nav.pricing">Pricing</a></div><div><h4 data-i18n="footer.legal">Legal</h4><a href="privacy.html">Privacy Policy</a><a href="#">Termini di utilizzo</a></div><p class="copyright">© 2026 Manga Translator Studio.</p></footer>
-<div id="lightbox" class="lightbox" aria-hidden="true"><button id="closeLightbox" class="lightbox-close">×</button><button id="prevImage" class="lightbox-arrow left">‹</button><img id="lightboxImage" alt="Translated manga preview" /><button id="nextImage" class="lightbox-arrow right">›</button><div id="lightboxCounter" class="lightbox-counter"></div></div>
-<script src="i18n.js"></script><script src="site.js"></script>
+<footer class="site-footer">
+  <div><a class="brand footer-brand" href="index.html"><img src="assets/logo/app-icon-dark.png" alt="Manga Translator Studio logo" class="brand-logo" /><span class="brand-text">Manga Translator Studio</span></a><p data-i18n="footer.text.v25">Local AI manga translation. No cloud. No mandatory subscription. Full privacy.</p></div>
+  <div><h4 data-i18n="footer.product">Product</h4><a href="pricing.html" data-i18n="nav.pricing">Pricing</a><a href="#download" data-i18n="nav.download.short">Download</a><a href="changelog.html" data-i18n="footer.changelog">Changelog</a></div>
+  <div><h4 data-i18n="footer.guides">Guides</h4><a href="guide.html" data-i18n="nav.guide">Guide</a><a href="index.html#hardware" data-i18n="nav.hardware">Hardware</a><a href="index.html#faq">FAQ</a></div>
+  <div><h4 data-i18n="footer.legal">Legal</h4><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a><a href="terms.html" data-i18n="footer.terms">Terms of Service</a><a href="eula.html" data-i18n="footer.eula">EULA</a><a href="refund.html" data-i18n="footer.refund">Refund Policy</a></div>
+  <div><h4 data-i18n="footer.support">Support</h4><a href="contact.html" data-i18n="footer.contact">Contact</a></div>
+  <p class="copyright" data-i18n="footer.copyright">© 2026 Manga Translator Studio. All rights reserved.</p>
+</footer>
+<div id="lightbox" class="lightbox" aria-hidden="true"><button id="closeLightbox" class="lightbox-close">×</button><button id="prevImage" class="lightbox-arrow left">‹</button><img id="lightboxImage" alt="Translated manga preview"/><button id="nextImage" class="lightbox-arrow right">›</button><div id="lightboxCounter" class="lightbox-counter"></div></div>
+<div id="videoModal" class="video-modal" aria-hidden="true"><div class="video-modal-inner"><button id="closeVideoModal" class="video-close" type="button" aria-label="Close video">×</button><video id="demoVideo" class="demo-video" controls preload="none" poster="assets/app/app-preview-light.webp"><source src="assets/video/demo.mp4" type="video/mp4" /></video><p class="video-help">Put your demo video here: <b>assets/video/demo.mp4</b>.</p></div></div>
+<script src="i18n.js"></script>
+<script src="site.js"></script>
 </body>
 </html>
