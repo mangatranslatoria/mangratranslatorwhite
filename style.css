@@ -1788,3 +1788,111 @@ body.theme-dark .hero-pills-v25 .lifetime-pill{
   .hero-pills span i::before,
   .hero-pills-v25 span i::before{font-size:29px!important;}
 }
+
+/* v38 conversion-first layout: show proof before feature list */
+@media (min-width: 769px){
+  #gallery{margin-top:28px;}
+  #pricing{margin-top:54px;}
+  #features{margin-top:54px;}
+}
+
+/* v38 mobile order: title -> CTA -> app preview -> translation examples -> pricing -> features */
+@media (max-width: 768px){
+  .hero{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:18px!important;
+    padding:28px 0 18px!important;
+  }
+  .hero-copy{display:contents!important;}
+  .hero h1{order:1!important;}
+  .hero-subtitle{order:2!important;}
+  .hero-actions{order:3!important;margin-top:18px!important;}
+  .trial-note{order:4!important;margin-top:4px!important;}
+  .app-frame{order:5!important;width:100%!important;max-width:100%!important;margin-top:8px!important;}
+  .hero-pills{
+    order:6!important;
+    margin-top:16px!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:12px!important;
+    width:100%!important;
+  }
+  .hero-pills span{
+    width:auto!important;
+    min-height:74px!important;
+    justify-content:flex-start!important;
+    padding:14px 12px!important;
+  }
+  .hero-pills .lifetime-pill{
+    grid-column:1 / -1!important;
+  }
+  .hero-language-note{order:7!important;margin-top:8px!important;}
+  #gallery{margin-top:24px!important;}
+  #pricing{margin-top:34px!important;}
+  #features{margin-top:34px!important;}
+}
+
+@media (max-width: 480px){
+  .hero-actions{gap:12px!important;}
+  .hero-pills{grid-template-columns:1fr 1fr!important;gap:10px!important;}
+  .hero-pills span{min-height:66px!important;}
+  .hero-pills b{font-size:16px!important;line-height:1.15!important;}
+  .app-frame{border-radius:18px!important;}
+}
+
+
+/* ===============================
+   V39 mobile conversion order
+   Keep hero benefit pills after pricing on mobile.
+   =============================== */
+.mobile-hero-pills{display:none;}
+
+@media (max-width: 768px){
+  .hero > .hero-copy > .hero-pills,
+  .hero > .hero-copy > .hero-language-note,
+  .hero .hero-pills,
+  .hero .hero-language-note{
+    display:none!important;
+  }
+
+  .mobile-hero-pills{
+    display:block!important;
+    margin-top:28px!important;
+    margin-bottom:10px!important;
+  }
+
+  .mobile-hero-pills-grid{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:12px!important;
+    width:100%!important;
+    margin-top:0!important;
+  }
+
+  .mobile-hero-pills-grid span{
+    width:auto!important;
+    min-height:74px!important;
+    justify-content:flex-start!important;
+    padding:14px 12px!important;
+  }
+
+  .mobile-hero-pills-grid .lifetime-pill{
+    grid-column:1 / -1!important;
+  }
+
+  .mobile-hero-language-note{
+    display:block!important;
+    margin-top:14px!important;
+    margin-bottom:0!important;
+  }
+
+  #pricing{margin-bottom:0!important;}
+  #features{margin-top:30px!important;}
+}
+
+@media (max-width: 480px){
+  .mobile-hero-pills-grid{gap:10px!important;}
+  .mobile-hero-pills-grid span{min-height:66px!important;}
+  .mobile-hero-pills-grid b{font-size:16px!important;line-height:1.15!important;}
+}
